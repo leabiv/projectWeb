@@ -4,6 +4,11 @@
 
 {% block content %}
     <div style="background-color: rgba(24, 64, 8); width: 50%; margin: 10px auto; border-radius: 5px; padding: 1px 0px;">
+        
+        {% if "valido" in request.GET %}
+            <p>Informacion Enviada Correctamente</p>
+        {% endif %}
+        
         <form action="" method="POST" style="text-align: center;">
             {% csrf_token %}
             <table style="color: aliceblue; margin: 20px auto;">{{miformulario.as_table}}</table>
